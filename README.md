@@ -4,7 +4,7 @@
 
 2.单例模式
 
-3.简单工厂模式
+<a href="#Simple factory mode">3.简单工厂模式</a>
 
 4.工厂方法模式
 
@@ -105,4 +105,34 @@
   > > <b>接口下的类必须全部使用接口中的方法：</b>就是预留四孔的大积木底座，可以插上底座为三孔的小积木，但不要这样做，丑。。。不稳定。。。浪费资源。。。
 
   
+
+## <a name="Simple factory mode">3.简单工厂模式</a>
+
+```
+
+```
+
+<?php
+	class a{
+		static function show(){
+			echo "这是产品a";
+		}
+	}
+	class factory{
+		static function createA(){
+			$a=new a();
+			echo "创建a产品<br/>";
+			return $a;
+		}
+	}
+	$f_a=new factory(); //创建一个生产a的工厂
+	$pro=$f_a->createA();//工厂生产a产品
+	$pro->show();//a产品展示
+?>
+
+```
+php
+```
+
+![示例](img/php.PNG)
 
