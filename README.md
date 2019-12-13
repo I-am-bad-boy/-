@@ -110,13 +110,17 @@
 
 ```php
 <?php
-	class a{
-		static function show(){
+	class a
+	{
+		static function show()
+        {
 			echo "这是产品a";
 		}
 	}
-	class factory{
-		static function createA(){
+	class factory
+    {
+		static function createA()
+        {
 			$a=new a();
 			echo "创建a产品<br/>";
 			return $a;
