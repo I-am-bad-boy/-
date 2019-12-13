@@ -108,10 +108,7 @@
 
 ## <a name="Simple factory mode">3.简单工厂模式</a>
 
-```
-
-```
-
+```php
 <?php
 	class a{
 		static function show(){
@@ -129,10 +126,10 @@
 	$pro=$f_a->createA();//工厂生产a产品
 	$pro->show();//a产品展示
 ?>
+```
 
-```
-php
-```
+
+
+
 
 ![示例](img/php.PNG)
-
