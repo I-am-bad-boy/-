@@ -610,6 +610,64 @@ $t->charge($ar);
 
 ## 9.桥接模式
 
+```php
+<?php
+interface brand
+{
+    function call();
+}
+class vivo implements brand
+{
+    function call()
+    {
+        echo "这是vivo牌的<br/>";
+    }
+}
+class xiaomi implements brand
+{
+    function call()
+    {
+        echo "这是小米牌的<br/>";
+    }
+}
+abstract class phone
+{
+    public $brand;
+    function __construct(brand $b)
+    {
+        $this->brand=$b;
+    }
+    function show()
+    {
+
+    }
+}
+class foldePhone extends phone
+{
+    function show()
+    {
+        $this->brand->call();
+        echo "这是滑盖手机<br/>";
+    }
+}
+class upRightPhone extends phone
+{
+    function show()
+    {
+        $brand->call();
+        echo "这是直板机<br/>";
+    }
+}
+$b=new vivo();
+$fv=new foldePhone($b);
+$fv->show();
+?>
+```
+
+![桥接模式](img/桥接模式.PNG)
+
+桥接模式可以说是将一个复杂的类分成不同属性类然后在聚合在一起。
+
 ## 10.装饰者模式
 
 ## 11.组合模式
