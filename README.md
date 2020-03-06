@@ -670,6 +670,65 @@ $fv->show();
 
 ## 10.装饰者模式
 
+```php
+<?php
+abstract class beverage
+{
+	private $description="unknow beverage";
+	function getDescription()
+	{
+		return $description;
+	}
+	function cost()
+	{
+		
+	}
+}
+abstract class condimentDecorator extends beverage
+{
+	function getDescription()
+	{
+		
+	}
+}
+class espresso extends beverage
+{
+	private $description;
+	function __construct()
+	{
+		$this->description="espresso";
+	}
+	function cost()
+	{
+		return 1.99;
+	}
+}
+class mocha extends condimentDecorator
+{
+	private $beverage;
+	function __construct(beverage $b)
+	{
+		$this->beverage=$b;
+	}
+	function getDescription()
+	{
+		return beverage.getDescription()+",mocha";
+	}
+	function cost()
+	{
+		return $this->beverage->cost()+0.2;
+	}
+}
+$beverage=new espresso();
+$beverage=new mocha($beverage);
+echo $beverage->cost();
+?>
+```
+
+![装饰者模式](img/装饰者模式.PNG)
+
+感觉装饰者模式就是在一般的继承的基础上加一个子类然后这个子类聚合父类并可以在这个子类里添加功能，每次调用都使用都将父类的子类调用到这个子类里实现全部功能。
+
 ## 11.组合模式
 
 ## 12.外观模式
